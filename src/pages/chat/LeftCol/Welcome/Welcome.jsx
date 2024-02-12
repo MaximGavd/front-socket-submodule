@@ -1,10 +1,11 @@
 import React from 'react'
-import UserEmpty from './UserEmpty'
-import UserLogged from './UserLogged'
 
 const Welcome = ({user}) => {
   return (
-    user.length > 0 ? <UserLogged user={user} /> : <UserEmpty />
+    <div className={styles.roomAndUsersColumn}>
+      <div>Welcome , {user.username}</div>        
+      <div>Your room topic is about: {user.room}! </div>  
+    </div> 
   )
 }
 

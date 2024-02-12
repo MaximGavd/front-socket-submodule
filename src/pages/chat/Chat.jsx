@@ -16,7 +16,7 @@ const Chat = ({socket}) => {
             setUser(data);
         })
         console.log(user);
-        !user.length && navigate('/');        
+        // !user.length && navigate('/');        
         socket.on('recieve_message' , (data) => {
             setMessage(state => [ ...state , {message: data.message , username: data.username , room: data.room}]);
         })

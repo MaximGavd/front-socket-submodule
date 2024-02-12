@@ -10,6 +10,7 @@ const UserList = ({user , socket}) => {
     const leaveRoom = () => {
         socket.emit('leave_room' , usersRemain );
         setAllUsers(usersRemain);
+        navigate('/')
     }
     React.useEffect(() => { 
         socket.on('all_users' , ({chatRoomUsers}) => {

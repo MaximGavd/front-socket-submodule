@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = ({username , room , setUsername , setRoom , socket}) => {
     const navigate = useNavigate();
     const joinRoom = () => {        
-        if (username && room) {
+        if (username !== '' && room !== '') {
             socket.emit('join_room', { username, room });
             navigate('/chat');
         }
